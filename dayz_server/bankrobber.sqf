@@ -1,6 +1,6 @@
 
 
-private ["_hint","_Remote_Msg","_timeBeforRunAgain","_bankPos","_nearestPlayer","_thief","_bankMarker","_shelter"];
+private ["_hint","_Remote_Msg","_timeBeforRunAgain","_bankPos","_nearestPlayer","_thief","_bankMarker","_shelter","_shelterPos"];
 _Remote_Msg = 1;
 _timeBeforRunAgain = 3600; //1 hs
 _bankPos = [getMarkerPos "center",0,5500,10,0,2000,0] call BIS_fnc_findSafePos;
@@ -8,14 +8,14 @@ _shelter = createVehicle ["Land_MBG_HeavyShelter",[(_bankPos select 0) - 3, (_ba
 _shelter setDir 0;
 _shelter setVectorUp surfaceNormal position _shelter;
 _shelter addEventHandler ["handleDamage", {false}];
-
-_bankMarker = createMarker ["bank", _bankPos];
+_shelterPos = getpos _shelter;
+_bankMarker = createMarker ["bank", _shelterPos];
 _bankMarker setMarkerText "THEBANK";
-_bankMarker setMarkerShape "ICON";
 _bankMarker setMarkerType "SupplyVehicle";
 _bankMarker setMarkerColor "ColorRed";
-_bankMarker setMarkerAlpha 1;
+_bankMarker setMarkerBrush "Solid";
 _bankMarker setMarkerSize [0.5,0.5];
+
 
 if(isNil "script_in_progress")then{script_in_progress = false;};
 
