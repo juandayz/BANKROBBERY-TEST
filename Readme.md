@@ -23,7 +23,7 @@ bankrobber = [];
 ```ruby
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";
 ```
-Replace by:
+Paste Below:
 ```ruby
 call compile preprocessFileLineNumbers "dayz_code\init\publicEH.sqf";
 ```
