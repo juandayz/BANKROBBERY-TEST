@@ -2,6 +2,12 @@
 
 TEST VERSION.
 
+The bank is spawned randomly on each server restart.
+
+The script should recognize and take nearest player as a thief to execute the client side script over him.
+
+
+
 1.Open your server_functions.sqf and at very bottom add:
 
 ```ruby
