@@ -1,8 +1,8 @@
 //bankrobber.sqf 
  
-private ["_maxSeconds","_seconds","_robComplete","_mypos","_dir","_vault","_fill_lists","_fill","_rand"]; 
+private ["_maxSeconds","_seconds","_robComplete","_mypos","_dir","_vault"]; 
  
-_maxSeconds = 20;
+_maxSeconds = 240;
 _seconds = 0;
 _robComplete = 0;
 
@@ -18,31 +18,24 @@ clearMagazineCargoGlobal _vault;
 while {true} do {
 systemChat format["COUNTDOWN: %1",_maxSeconds - _seconds];
 if (_seconds >= _maxSeconds) exitWith {_robComplete = 1;"The Vault was opened!" call dayz_rollingMessages;};
-if (_seconds == 20) then {[] execVM 'scripts\bankrobber\callPolice.sqf';};
+if (_seconds == 30) then {[] execVM 'scripts\bankrobber\callPolice.sqf';};
 _seconds = _seconds + 10;
 sleep 10;
 };	
 	
 if (_robComplete != 0) exitWith {
-_fill_lists = [
-[
-[""],
-["ItemBriefcase100oz","ItemRuby","ItemGoldBar","ItemSilverBar","PartOre"]
-],
-[
-[""],
-["ItemBriefcase100oz","ItemObsidian","ItemTopaz","ItemSapphire","ItemSapphire","ItemSapphire","ItemSapphire"]
-],
-[
-[""],
-["ItemBriefcase100oz","ItemAmethyst","ItemAmethyst","ItemEmerald","ItemEmerald","ItemCitrine","ItemRuby"]
-]
-];
+if ([0.50] call fn_chance) then {
+_vault addMagazineCargoGlobal ["ItemRuby",2];
+_vault addMagazineCargoGlobal ["ItemTopaz",2];
+_vault addMagazineCargoGlobal ["ItemSapphire",2];
+_vault addMagazineCargoGlobal ["ItemObsidian",2];
+}else{
+_vault addMagazineCargoGlobal ["ItemAmethyst",4];
+_vault addMagazineCargoGlobal ["ItemEmerald",4];
+_vault addMagazineCargoGlobal ["ItemCitrine",5];
+_vault addMagazineCargoGlobal "ItemBriefcase100oz";
+};
 
-_fill = _fill_lists call BIS_fnc_selectRandom;
-
-
-{_vault addMagazineCargoGlobal [_x,1];} forEach (_fill select 0);
 waitUntil {(player distance _vault) > 50};
 deleteVehicle _vault;
 };
