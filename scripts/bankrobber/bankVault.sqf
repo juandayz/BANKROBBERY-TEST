@@ -4,7 +4,7 @@ private ["_maxSeconds","_seconds","_robComplete","_mypos","_dir","_vault","_fill
  
 _maxSeconds = 240;
 _seconds = 0;
-_robComplete == 0;
+_robComplete = 0;
 [] execVM 'scripts\bankrobber\callPolice.sqf';
 "The Vault will be filled in 4Min. Police was alerted!" call dayz_rollingMessages;
 _mypos = getposATL player;
