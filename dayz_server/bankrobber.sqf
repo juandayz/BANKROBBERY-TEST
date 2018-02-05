@@ -20,7 +20,7 @@ _bankMarker setMarkerSize [0.5,0.5];
 if(isNil "script_in_progress")then{script_in_progress = false;};
 
 while {true} do {
-waitUntil{{isPlayer _x && _x distance _pos < 5  } count playableunits > 0};
+waitUntil{{isPlayer _x && _x distance _bankPos < 5  } count playableunits > 0};
 
 
 if(script_in_progress)exitwith{};
