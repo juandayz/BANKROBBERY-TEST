@@ -24,4 +24,4 @@ call compile preprocessFileLineNumbers "dayz_code\init\publicEH.sqf";
 
 4.Paste scripts and dayz_code folder into MPMissions\your instance\
 
-5.Paste dayz_server into @DayZ_Server\addons\dayz_server.pbo\
+5.Paste dayz_server\bankrobber.sqf into: @DayZ_Server\addons\dayz_server.pbo\
