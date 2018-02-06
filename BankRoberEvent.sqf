@@ -1,4 +1,4 @@
-private ["_Remote_Msg","_bankPos","_shelter","_shelterPos","_vault","_bankMarker","_missiontimeout","_cleanmission","_playerPresent","_starttime","_currenttime",
+private ["_deltime","_Remote_Msg","_bankPos","_shelter","_shelterPos","_vault","_bankMarker","_missiontimeout","_cleanmission","_playerPresent","_starttime","_currenttime",
 "_rewards","_weapons","_wavegroup1","_pos","_SpawnPos","_WaveSpawnLocation","_playercount"];
 
 
@@ -48,6 +48,7 @@ _bankMarker setMarkerSize [0.5,0.5];
 
 
 //////////////////////////check for players to start despawn
+_deltime = 500;
 _missiontimeout = true;
 _cleanmission = false;
 _playerPresent = false;
