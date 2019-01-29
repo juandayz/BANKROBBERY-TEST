@@ -1,6 +1,6 @@
-# BANKROBBERY-TEST  the idea to update it is by totis.
+# BANKROBBERY-TEST  the idea to update it is by totis. 
 
-TEST VERSION.
+TEST VERSION.  NOT FINISHED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 The bank is spawned randomly on each server restart.
 
