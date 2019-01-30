@@ -26,7 +26,8 @@ _maxSeconds = 60;
 _seconds = 0;
 
 execVM "the_bank\security.sqf";//call ai
-  
+player switchMove "";
+player playActionNow "Medic";
 while {true} do {
 if ((player distance _zone) > _range) exitWith {_inzone = 0;};
 systemChat format["COUNTDOWN: %1",_maxSeconds - _seconds];
@@ -34,9 +35,6 @@ if (_seconds >= _maxSeconds) exitWith {"opened! collect rewards from the ground!
 if (_seconds == 30) then {"im Trying...Im Trying" call dayz_rollingMessages;};
 _seconds = _seconds + 10;
 sleep 10;
-
-player switchMove "";
-player playActionNow "Medic";
 };        
  
 if (_inzone == 0) exitWith {"FAIL! you leave the bank area" call dayz_rollingMessages;};
