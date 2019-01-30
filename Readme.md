@@ -1,4 +1,4 @@
-# BANKROBBERY-TEST  the idea to update it is by totis. 
+# BANKROBBERY-TEST  By Jingles and me.
 
 TEST VERSION.  NOT FINISHED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
