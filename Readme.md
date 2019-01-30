@@ -15,9 +15,10 @@ INSTALL:
 ```
 
 2-A-Find:
+
 ```ruby
 //Towing with tow truck
-	/*
+	
 	if(_typeOfCursorTarget == "TOW_DZE") then {
 		if (s_player_towing < 0) then {
 			if(!(_cursorTarget getVariable ["DZEinTow", false])) then {
@@ -30,29 +31,62 @@ INSTALL:
 		player removeAction s_player_towing;
 		s_player_towing = -1;
 	};
-	*/
+	
   ```
   
 below paste:
 
-```ruby
+```
  _bankrobbery = cursorTarget isKindOf "Notebook";
-    if (_bankrobbery && (player distance cursorTarget < 5)) then {
-        if (s_player_bankrob < 0) then {
-            s_player_bankrob = player addAction ["Rob the bank","dayz_code\external\rob\robbank.sqf",cursorTarget, 0, false, true, "",""];
-        };
-    } else {
-       
-        player removeAction s_player_bankrob;
-		s_player_bankrob = -1;
-    };
+ if (_bankrobbery && (player distance cursorTarget < 5)) then {
+ if (s_player_bankrob < 0) then {
+ s_player_bankrob = player addAction ["Rob the bank","scripts\the_bank\main_script.sqf",cursorTarget, 0, false,true, "",""];};
+ } else {
+ player removeAction s_player_bankrob;
+ s_player_bankrob = -1;
+ };
+ ```
+ 2-B-Find:
+    
     ```
-    
-    
-    2-B-Find:
-    
-    ```ruby
     player removeAction s_player_fillgen;
-	  s_player_fillgen = -1;
+    s_player_fillgen = -1;
     ```
+  Below paste:
+  ```
+   player removeAction s_player_bankrob;
+ s_player_bankrob = -1;
+ ```
+ 
+ 3-Open your custom variables.sqf and paste:
+ 
+ ```
+  s_player_bankrob = -1;
+ ```
+in somewhere with the rest of your actions.
+
+
+4-Drop the bank_building.sqf into the root of your dayz_server.pbo
+
+5-Open your server_function.sqf and find:
+
+```
+call compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\kk_functions.sqf";
+```
+below paste:
+
+```
+[] execVM  "\z\addons\dayz_server\bank_building.sqf";
+``` 
+ 
+ 
+
     
+    
+    
+   
+    
+ 
+    
+ 
+  
