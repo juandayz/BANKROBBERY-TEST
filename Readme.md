@@ -1,3 +1,58 @@
 # BANKROBBERY-TEST  the idea to update it is by totis. 
 
 TEST VERSION.  NOT FINISHED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+**map buildings was taked from Mig version of bank robbery mod.
+
+INSTALL:
+
+```
+1-Drop script folder into your \mpmissions\your instance\
+```
+
+```
+2-Open your custom fn_selfactions.sqf
+```
+
+2-A-Find:
+```ruby
+//Towing with tow truck
+	/*
+	if(_typeOfCursorTarget == "TOW_DZE") then {
+		if (s_player_towing < 0) then {
+			if(!(_cursorTarget getVariable ["DZEinTow", false])) then {
+				s_player_towing = player addAction [localize "STR_EPOCH_ACTIONS_ATTACH" "\z\addons\dayz_code\actions\tow_AttachStraps.sqf",_cursorTarget, 0, false, true];				
+			} else {
+				s_player_towing = player addAction [localize "STR_EPOCH_ACTIONS_DETACH", "\z\addons\dayz_code\actions\tow_DetachStraps.sqf",_cursorTarget, 0, false, true];				
+			};
+		};
+	} else {
+		player removeAction s_player_towing;
+		s_player_towing = -1;
+	};
+	*/
+  ```
+  
+below paste:
+
+```ruby
+ _bankrobbery = cursorTarget isKindOf "Notebook";
+    if (_bankrobbery && (player distance cursorTarget < 5)) then {
+        if (s_player_bankrob < 0) then {
+            s_player_bankrob = player addAction ["Rob the bank","dayz_code\external\rob\robbank.sqf",cursorTarget, 0, false, true, "",""];
+        };
+    } else {
+       
+        player removeAction s_player_bankrob;
+		s_player_bankrob = -1;
+    };
+    ```
+    
+    
+    2-B-Find:
+    
+    ```ruby
+    player removeAction s_player_fillgen;
+	  s_player_fillgen = -1;
+    ```
+    
