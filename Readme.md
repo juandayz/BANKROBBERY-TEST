@@ -37,14 +37,16 @@ INSTALL:
 below paste:
 
 ```
- _bankrobbery = cursorTarget isKindOf "Notebook";
- if (_bankrobbery && (player distance cursorTarget < 5)) then {
- if (s_player_bankrob < 0) then {
- s_player_bankrob = player addAction ["Rob the bank","scripts\the_bank\main_script.sqf",cursorTarget, 0, false,true, "",""];};
- } else {
- player removeAction s_player_bankrob;
- s_player_bankrob = -1;
- };
+ if ((_cursorTarget isKindOf "Notebook") && (player distance _cursorTarget < 5)) then {
+
+if (s_player_bankrob < 0) then {
+s_player_bankrob = player addAction ["Hack The Bank", "scripts\the_bank\main_script.sqf"];
+};
+} else {
+player removeAction s_player_bankrob;
+s_player_bankrob = -1;	
+};	
+
  ```
  2-B-Find:
     
