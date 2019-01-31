@@ -1,8 +1,8 @@
-# BANKROBBERY-TEST  By Jingles and me.
+# BANKROBBERY-TEST  By Jingles and me. **map buildings was taked from !!!!!MIG!!!!! version of bank robbery mod. 
 
-TEST VERSION.  NOT FINISHED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+TEST VERSION
 
-**map buildings was taked from Mig version of bank robbery mod.
+
 
 INSTALL:
 
