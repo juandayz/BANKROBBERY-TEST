@@ -1,6 +1,7 @@
-# BANKROBBERY-TEST  By Jingles and me. **map buildings was taked from !!!!!MIG!!!!! version of bank robbery mod. 
+# BANKROBBERY-  By Jingles and me. **map buildings was taked from !!!!!MIG!!!!! version of bank robbery mod. 
 
-TEST VERSION
+PLEASE DONATE: https://github.com/juandayz/BANKROBBERY-TEST/blob/master/DONATION.md
+
 
 
 
